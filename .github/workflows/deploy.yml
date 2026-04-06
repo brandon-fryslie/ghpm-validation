@@ -3,16 +3,21 @@ on:
   push:
     tags:
       - 'v*'
+  pull_request:
+    branches: [main]
 concurrency:
-  group: pages-deploy
+  group: pages-deploy-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - id: deploy
         uses: ./
         with:
