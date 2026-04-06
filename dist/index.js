@@ -37145,9 +37145,17 @@ const RECORD_SEP = '\x1e';
 const FORMAT = `%H${FIELD_SEP}%an${FIELD_SEP}%ae${FIELD_SEP}%aI${FIELD_SEP}%B${RECORD_SEP}`;
 const UNREACHABLE_TAG = 'GHPM_UNREACHABLE_REV';
 async function isShallowRepo(repoDir) {
+    // [LAW:dataflow-not-control-flow] The shallow state is the data: a present-but-empty
+    // .git/shallow file (left behind by actions/checkout@v4 with fetch-depth: 0 after it
+    // unshallows) is NOT a real shallow clone. Only a non-empty shallow list means history
+    // is actually truncated.
     try {
-        await promises.access(path$1.join(repoDir, '.git', 'shallow'));
-        return true;
+        const shallowPath = path$1.join(repoDir, '.git', 'shallow');
+        const s = await promises.stat(shallowPath);
+        if (s.size === 0)
+            return false;
+        const contents = await promises.readFile(shallowPath, 'utf8');
+        return contents.trim().length > 0;
     }
     catch {
         return false;
