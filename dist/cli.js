@@ -31898,8 +31898,10 @@ async function prepareBranch(config) {
     // Embed token in remote URL. Actions log masking + core.setSecret on token mitigates T-01-08.
     const remoteUrl = `https://x-access-token:${config.token}@github.com/${config.repo}.git`;
     await git(['remote', 'set-url', 'origin', remoteUrl]);
-    // Fetch target branch (shallow). Exit code tells us if the branch exists.
-    const fetchCode = await git(['fetch', 'origin', config.targetBranch, '--depth=1']);
+    // Fetch target branch. Full depth: a --depth=1 fetch can shallow the source repo,
+    // which breaks metadata-extractor's `git log` over ranges that predate gh-pages history.
+    // gh-pages branches are small; the full fetch is fine.
+    const fetchCode = await git(['fetch', 'origin', config.targetBranch]);
     if (fetchCode === 0) {
         // Branch exists: create a worktree pointing at the remote tip.
         await git(['worktree', 'add', workdir, `origin/${config.targetBranch}`]);
