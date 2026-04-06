@@ -1,0 +1,21 @@
+name: Deploy
+on:
+  push:
+    tags:
+      - 'v*'
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - id: deploy
+        uses: ./
+        with:
+          source-dir: site
+          target-branch: gh-pages
+          base-path-mode: rewrite
