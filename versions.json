@@ -2,6 +2,12 @@
   "schema": 1,
   "versions": [
     {
+      "version": "v2.0.0",
+      "ref": "refs/tags/v2.0.0",
+      "sha": "126f98a309607d0dc0cb4f7800d5b4f3679d723e",
+      "timestamp": "2026-04-06T11:40:57.941Z"
+    },
+    {
       "version": "v1.0.0",
       "ref": "refs/tags/v1.0.0",
       "sha": "126f98a309607d0dc0cb4f7800d5b4f3679d723e",
