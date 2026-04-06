@@ -4,15 +4,36 @@
     {
       "version": "pr-1",
       "ref": "refs/pull/1/merge",
-      "sha": "256641e1e7db5b916050ebccfa63765ec7c57957",
-      "timestamp": "2026-04-06T13:11:21.879Z",
+      "sha": "d575cb43d455ce5bff91d8ba3444be4f7b07a26b",
+      "timestamp": "2026-04-06T13:14:19.821Z",
       "commits": [
         {
-          "sha": "256641e1e7db5b916050ebccfa63765ec7c57957",
+          "sha": "d575cb43d455ce5bff91d8ba3444be4f7b07a26b",
           "author_name": "Brandon Fryslie",
           "author_email": "530235+brandon-fryslie@users.noreply.github.com",
-          "timestamp": "2026-04-06T07:11:14-06:00",
-          "message": "Merge b24b79d2fc98e8e6afd2640658a6272de51753c1 into 4e6860683b426b200f914236117c0dfe8b579386\n"
+          "timestamp": "2026-04-06T13:14:12Z",
+          "message": "Merge 4e229f797bfd72852d5c71b2436635b08ec69af0 into 4e6860683b426b200f914236117c0dfe8b579386\n"
+        },
+        {
+          "sha": "4e229f797bfd72852d5c71b2436635b08ec69af0",
+          "author_name": "test",
+          "author_email": "test@local",
+          "timestamp": "2026-04-06T07:14:08-06:00",
+          "message": "fix: full-depth fetch for gh-pages to avoid shallowing source repo\n"
+        },
+        {
+          "sha": "33230027d0cbca95586335d83948a1ece6c7f91a",
+          "author_name": "test",
+          "author_email": "test@local",
+          "timestamp": "2026-04-06T07:13:12-06:00",
+          "message": "fix: isShallowRepo ignores empty .git/shallow left by checkout@v4\n"
+        },
+        {
+          "sha": "bf8687e3b975d517c26aa4a7a8aadf6fe51ef909",
+          "author_name": "test",
+          "author_email": "test@local",
+          "timestamp": "2026-04-06T07:11:40-06:00",
+          "message": "test: trigger rerun for upsert check\n"
         },
         {
           "sha": "b24b79d2fc98e8e6afd2640658a6272de51753c1",
