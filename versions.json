@@ -1,6 +1,35 @@
 {
-  "schema": 1,
+  "schema": 2,
   "versions": [
+    {
+      "version": "v9.0.0-cli",
+      "ref": "refs/tags/v9.0.0-cli",
+      "sha": "2ab38b8e4f6034d966598b0e567b8ca5c93a0587",
+      "timestamp": "2026-04-06T13:10:32.510Z",
+      "commits": [
+        {
+          "sha": "2ab38b8e4f6034d966598b0e567b8ca5c93a0587",
+          "author_name": "test",
+          "author_email": "test@local",
+          "timestamp": "2026-04-06T07:10:27-06:00",
+          "message": "phase5 cli: add dist + site-cli/v9.0.0-cli fixture\n"
+        },
+        {
+          "sha": "126f98a309607d0dc0cb4f7800d5b4f3679d723e",
+          "author_name": "bmf",
+          "author_email": "bmf@local",
+          "timestamp": "2026-04-06T05:40:35-06:00",
+          "message": "fix: dist bundle commonjs marker\n"
+        },
+        {
+          "sha": "d778ac323f4e7933548cb5f8bd73f50c0e62ae47",
+          "author_name": "bmf",
+          "author_email": "bmf@local",
+          "timestamp": "2026-04-06T05:39:48-06:00",
+          "message": "initial: action + site fixture + workflow\n"
+        }
+      ]
+    },
     {
       "version": "v6.0.0",
       "ref": "refs/tags/v6.0.0",
